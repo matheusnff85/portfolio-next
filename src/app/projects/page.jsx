@@ -10,7 +10,7 @@ export default function Projects() {
             Projetos
           </h2>
           <p className="mt-4 text-zinc-400">
-            Alguns dos projetos em que trabalhei.
+            Alguns dos projetos em que trabalhei e criei.
           </p>
         </div>
         <div className="w-full h-px bg-zinc-800" />
