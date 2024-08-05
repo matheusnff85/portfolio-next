@@ -1,6 +1,6 @@
 "use client";
 import { Navbar } from "../components/navbar";
-import { Card } from "../components/Card";
+import { Card } from "../components/card";
 import Link from "next/link";
 import { Mail, Github, Linkedin } from "lucide-react";
 
