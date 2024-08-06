@@ -2,7 +2,8 @@
 import { defineDocumentType, makeSource } from "contentlayer/source-files";
 var Post = defineDocumentType(() => ({
   name: "Post",
-  filePathPattern: "**/*.md",
+  filePathPattern: "**/*.mdx",
+  contentType: "mdx",
   fields: {
     title: { type: "string", required: true },
     date: { type: "date", required: true },
@@ -18,4 +19,4 @@ var contentlayer_config_default = makeSource({
 export {
   contentlayer_config_default as default
 };
-//# sourceMappingURL=compiled-contentlayer-config-MIVBRL44.mjs.map
+//# sourceMappingURL=compiled-contentlayer-config-O5XXJCQR.mjs.map

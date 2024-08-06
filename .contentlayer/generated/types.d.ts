@@ -18,8 +18,8 @@ export type Post = {
   description?: string | undefined
   githubLink: string
   deployLink?: string | undefined
-  /** Markdown file body */
-  body: Markdown
+  /** MDX file body */
+  body: MDX
 
 }  
 

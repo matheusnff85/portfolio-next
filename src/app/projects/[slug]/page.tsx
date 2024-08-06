@@ -1,8 +1,9 @@
 import { notFound } from "next/navigation";
 import { allPosts } from "contentlayer/generated";
 import { Navbar } from "../../components/navbar";
-import { ArrowRight } from "lucide-react";
 import Link from "next/link";
+import "./mdx.css";
+import { Mdx } from "../../components/mdx";
 
 type Props = {
   params: {
@@ -25,7 +26,7 @@ export default async function ProjectPage({ params }: Props) {
   }
 
   return (
-    <div className="min-h-screen">
+    <div className="relative isolate overflow-hidden bg-gradient-to-tl from-black via-zinc-900 to-black min-h-screen">
       <Navbar />
       <div className="container mx-auto relative isolate overflow-hidden  py-24 sm:py-32">
         <div className="mx-auto max-w-7xl px-6 lg:px-8 text-center flex flex-col items-center">
@@ -53,10 +54,11 @@ export default async function ProjectPage({ params }: Props) {
           </div>
         </div>
       </div>
-      <article
-        dangerouslySetInnerHTML={{ __html: project.body.html }}
-        className="px-4 py-12 mx-auto prose prose-zinc prose-quoteless"
-      ></article>
+      <div className="bg-zinc-50 min-h-screen mx-auto">
+        <article className="text-zinc-900 px-4 py-12 mx-auto prose prose-zinc w-1/2">
+          <Mdx code={project.body.code} />
+        </article>
+      </div>
     </div>
   );
 }
