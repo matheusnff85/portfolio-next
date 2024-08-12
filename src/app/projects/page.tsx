@@ -3,6 +3,7 @@ import { allPosts } from "../../../.contentlayer/generated/index.mjs";
 import { Article } from "./article";
 import { Card } from "../components/card";
 import { Post } from "../../../.contentlayer/generated";
+import Link from "next/link";
 
 export default function Projects() {
   const sorted = allPosts.sort(
@@ -19,7 +20,16 @@ export default function Projects() {
             Projetos
           </h2>
           <p className="mt-4 text-zinc-400">
-            Alguns dos projetos em que trabalhei e criei.
+            Alguns dos projetos em que trabalhei e criei, você pode visualizar
+            todos no meu{" "}
+            <Link
+              target="_blank"
+              className="font-medium text-blue-600 dark:text-blue-500 hover:underline"
+              href="https://github.com/matheusnff85"
+            >
+              Github
+            </Link>
+            .
           </p>
         </div>
         <div className="w-full h-px bg-zinc-800" />
