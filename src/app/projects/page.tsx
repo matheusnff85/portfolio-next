@@ -1,6 +1,15 @@
 import { Navbar } from "../components/navbar";
+import { allPosts } from "../../../.contentlayer/generated/index.mjs";
+import { Article } from "./article";
+import { Card } from "../components/card";
+import { Post } from "../../../.contentlayer/generated";
 
 export default function Projects() {
+  const sorted = allPosts.sort(
+    (a, b) =>
+      new Date(b.date ?? Number.POSITIVE_INFINITY).getTime() -
+      new Date(a.date ?? Number.POSITIVE_INFINITY).getTime()
+  );
   return (
     <div className="relative pb-16">
       <Navbar />
@@ -14,6 +23,36 @@ export default function Projects() {
           </p>
         </div>
         <div className="w-full h-px bg-zinc-800" />
+
+        <div className="grid grid-cols-1 gap-4 mx-auto lg:mx-0 md:grid-cols-3">
+          <div className="grid grid-cols-1 gap-4">
+            {sorted
+              .filter((_, i) => i % 3 === 0)
+              .map((project) => (
+                <Card key={project._raw.flattenedPath}>
+                  <Article project={project as Post} />
+                </Card>
+              ))}
+          </div>
+          <div className="grid grid-cols-1 gap-4">
+            {sorted
+              .filter((_, i) => i % 3 === 1)
+              .map((project) => (
+                <Card key={project._raw.flattenedPath}>
+                  <Article project={project as Post} />
+                </Card>
+              ))}
+          </div>
+          <div className="grid grid-cols-1 gap-4">
+            {sorted
+              .filter((_, i) => i % 3 === 2)
+              .map((project) => (
+                <Card key={project._raw.flattenedPath}>
+                  <Article project={project as Post} />
+                </Card>
+              ))}
+          </div>
+        </div>
       </div>
     </div>
   );
