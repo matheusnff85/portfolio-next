@@ -5,6 +5,7 @@ import corelabWebChallengeMdx from './corelab-web-challenge.mdx.json' assert { t
 import ngcashAppMdx from './ngcash-app.mdx.json' assert { type: 'json' }
 import nlwUniteMdx from './nlw-unite.mdx.json' assert { type: 'json' }
 import portfolioMdx from './portfolio.mdx.json' assert { type: 'json' }
+import pratigoAppMdx from './pratigo-app.mdx.json' assert { type: 'json' }
 import trybeFcMdx from './trybe-fc.mdx.json' assert { type: 'json' }
 
-export const allPosts = [corelabApiChallengeMdx, corelabWebChallengeMdx, ngcashAppMdx, nlwUniteMdx, portfolioMdx, trybeFcMdx]
+export const allPosts = [corelabApiChallengeMdx, corelabWebChallengeMdx, ngcashAppMdx, nlwUniteMdx, portfolioMdx, pratigoAppMdx, trybeFcMdx]
