@@ -40,9 +40,13 @@ export default async function ProjectPage({ params }: Props) {
           </div>
           <div className="mx-auto mt-10 max-w-2xl lg:mx-0 lg:max-w-none">
             <div className="grid grid-cols-1 gap-y-6 gap-x-8 text-base font-semibold leading-7 text-white sm:grid-cols-2 md:flex lg:gap-x-10">
-              <Link target="_blank" href={project.githubLink}>
-                Repositório Github <span aria-hidden="true">&rarr;</span>
-              </Link>
+              {project.githubLink ? (
+                <Link target="_blank" href={project.githubLink}>
+                  Repositório Github <span aria-hidden="true">&rarr;</span>
+                </Link>
+              ) : (
+                ""
+              )}
               {project.deployLink ? (
                 <Link target="_blank" href={project.githubLink}>
                   Link do Projeto <span aria-hidden="true">&rarr;</span>
